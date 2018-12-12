@@ -17,10 +17,10 @@ export const routes = [
     }, children: [
         { path: '', component: UserStart },
         { path: ':id', component: UserDetail },
-
-// So user edit is now the name of this route
-// and I can now identify this route by name which means that on any page wherever I set up a link, for
-// example in user detail, I can now change this to pass an object instead of a string,
         { path: ':id/edit', component: UserEdit, name: 'userEdit' }
-    ] }
+    ] },
+    { path: '/redirect-me', redirect:'/user'},
+    { path: '/redirect-me-object', redirect:{ name: 'userEdit'} },
+    // catch all redirect for all routes
+    { path: '*', redirect: '/'}
 ];
