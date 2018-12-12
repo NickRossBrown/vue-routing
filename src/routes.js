@@ -1,6 +1,6 @@
 import Home from './components/Home.vue'
 import Header from './components/Header.vue'
-import AdvComponents from './components/AdvComponents/index.vue'
+import AdvComponents from './components/advcomponents/index.vue'
 
 // by having it in this asynchronous function here which has to resolve before it gets executed, webpack
 // is only doing this if we actually need that file and it will create appropriate bundles to be loaded
