@@ -1,5 +1,6 @@
 import Home from './components/Home.vue'
 import Header from './components/Header.vue'
+import AdvComponents from './components/AdvComponents/index.vue'
 
 // by having it in this asynchronous function here which has to resolve before it gets executed, webpack
 // is only doing this if we actually need that file and it will create appropriate bundles to be loaded
@@ -54,6 +55,12 @@ export const routes = [
         } },
         { path: ':id/edit', component: UserEdit, name: 'userEdit' }
     ] },
+
+    { path: '/advancedComponents', component: AdvComponents, name: 'AdvComponents', components: {
+        default: AdvComponents, 
+        'header-top': Header
+    } },
+
     { path: '/redirect-me', redirect:'/user'},
     { path: '/redirect-me-object', redirect:{ name: 'userEdit'} },
     // catch all redirect for all routes
