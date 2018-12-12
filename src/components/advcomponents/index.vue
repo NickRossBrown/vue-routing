@@ -5,9 +5,10 @@
                 <p>Nick is Awesome!!!</p>
                 <p>Nick is Dope!!!</p>
                 <sap-saping>
-                    <h2>Nick is Awesome!!!</h2>
-                    <h3> {{ quoteTitle }} </h3>
-                    <p>Nick is Dope!!!</p>
+                    <h2 slot="content">Nick is Awesome!!!</h2>
+                    <h3 slot="title"> {{ quoteTitle }} </h3>
+                    <p slot="content">Nick is Dope!!!</p>
+                    <p>this will be rendered last because it is unassigned</p>
                 </sap-saping>
             </div>
         </div>

@@ -1,6 +1,10 @@
 <template>
     <div>
         <p>IM THE BEST</p>
+        <slot name="title"></slot>
+        <slot name="content"></slot>
+        <hr>
+        <p>complete slot</p>
         <slot></slot>
 
     </div>
