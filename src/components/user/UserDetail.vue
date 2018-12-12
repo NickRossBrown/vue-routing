@@ -27,6 +27,14 @@
                     hash: '#data'
                 }
             }
+        },
+        beforeRouteEnter(to, from, next) {
+            console.log('inside conponent route setup');
+            if (true) {
+                next();
+            } else {
+                next(false);
+            }
         }
     }
 </script>

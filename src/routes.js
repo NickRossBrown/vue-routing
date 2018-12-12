@@ -16,11 +16,16 @@ export const routes = [
         'header-bottom': Header
     }, children: [
         { path: '', component: UserStart },
-        { path: ':id', component: UserDetail },
+        { path: ':id', component: UserDetail, beforeEnter: (to, from, next) => {
+            console.log('inside route setup');
+            next();
+            // next(false); abort
+            // next('/path'); that path including params and so on to redirect,
+        } },
         { path: ':id/edit', component: UserEdit, name: 'userEdit' }
     ] },
     { path: '/redirect-me', redirect:'/user'},
     { path: '/redirect-me-object', redirect:{ name: 'userEdit'} },
     // catch all redirect for all routes
     { path: '*', redirect: '/'}
-];
+];   
