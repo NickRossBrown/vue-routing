@@ -25,6 +25,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   console.log('global beforeEach');
   next();
+  // next(false); abort
+  // next('/path'); that path including params and so on to redirect,
 });
 
 new Vue({
