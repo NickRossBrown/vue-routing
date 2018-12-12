@@ -4,7 +4,11 @@
             <div class="col-xs-12">
                 <p>Nick is Awesome!!!</p>
                 <p>Nick is Dope!!!</p>
-                <sap-saping></sap-saping>
+                <sap-saping>
+                    <h2>Nick is Awesome!!!</h2>
+                    <h3> {{ quoteTitle }} </h3>
+                    <p>Nick is Dope!!!</p>
+                </sap-saping>
             </div>
         </div>
     </div>
@@ -14,6 +18,12 @@
     import Saying from './sayings/Saying.vue'
 
     export default {
+        data: function() {
+            return {
+                quoteTitle: 'The Quote',
+                selectedComponent: 'appQuote'
+            }
+        },
         components: {
             sapSaping: Saying
         }
@@ -22,4 +32,7 @@
 </script>
 
 <style>
+    h3 {
+        color:blue;
+    }
 </style>
