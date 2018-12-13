@@ -66,17 +66,26 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
+                    <label for="unavailable">
+                        <input
+                                type="radio"
+                                id="unavailable"
+                                value="Unavailable"
+                                v-model="gender"> Unavailable
+                    </label>
                     <label for="male">
                         <input
                                 type="radio"
                                 id="male"
-                                value="Male"> Male
+                                value="Male"
+                                v-model="gender"> Male
                     </label>
                     <label for="female">
                         <input
                                 type="radio"
                                 id="female"
-                                value="Female"> Female
+                                value="Female"
+                                v-model="gender"> Female
                     </label>
                 </div>
             </div>
@@ -85,8 +94,9 @@
                     <label for="priority">Priority</label>
                     <select
                             id="priority"
-                            class="form-control">
-                        <option></option>
+                            class="form-control"
+                            v-model="selectedPriority">
+                        <option v-for="priority in priorities" :selected="priority == 'low'">{{ priority }}</option>
                     </select>
                 </div>
             </div>
@@ -115,8 +125,8 @@
                         <ul>
                             <li v-for="item in sendMail"> {{ item }}</li>
                         </ul>
-                        <p>Gender:</p>
-                        <p>Priority:</p>
+                        <p>Gender: {{ gender }} </p>
+                        <p>Priority: {{ selectedPriority }}</p>
                         <p>Switched:</p>
                     </div>
                 </div>
@@ -135,7 +145,10 @@
                     age: 27
                 },
                 message: 'Enter a message here',
-                sendMail: []
+                sendMail: [],
+                gender: 'Unavailable',
+                selectedPriority: 'low',
+                priorities: ['high','medium','low']
             }
         }
     }
