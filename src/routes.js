@@ -2,6 +2,8 @@ import Home from './components/Home.vue'
 import Header from './components/Header.vue'
 import AdvComponents from './components/advcomponents/index.vue'
 import InputForms from './components/inputforms/index.vue'
+import Directives from './components/directives/index.vue'
+import ComputedProperties from './components/computedproperties/index.vue'
 
 // by having it in this asynchronous function here which has to resolve before it gets executed, webpack
 // is only doing this if we actually need that file and it will create appropriate bundles to be loaded
@@ -65,6 +67,15 @@ export const routes = [
         default: InputForms, 
         'header-top': Header
     } },
+    { path: '/Directives', component: Directives, name: 'Directives', components: {
+        default: Directives, 
+        'header-top': Header
+    } },
+    { path: '/ComputedProperties', component: ComputedProperties, name: 'ComputedProperties', components: {
+        default: ComputedProperties, 
+        'header-top': Header
+    } },
+    
 
     { path: '/redirect-me', redirect:'/user'},
     { path: '/redirect-me-object', redirect:{ name: 'userEdit'} },
