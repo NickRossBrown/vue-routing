@@ -9,18 +9,25 @@
                 <ul>
                     <li v-for="fruit in filteredFruits">{{ fruit }}</li>
                 </ul>
+                <button @click="fruits.push('Berries')">Add Berries Item to List</button>
+                <hr>
+                <hr>
+                <hr>
+                <app-list></app-list>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import List from './List.vue';
+    import { fruitMixin } from './fruitMixin';
+
     export default {
+        mixins: [fruitMixin],
         data() {
             return {
                 text: 'Hello there!',
-                fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
-                filterText: ''
             }
         },
         filters: {
@@ -34,6 +41,9 @@
                     return element.match(this.filterText);
                 });
             }
+        },
+        components: {
+            appList: List
         }
     }
 </script>
