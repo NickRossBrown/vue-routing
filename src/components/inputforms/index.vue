@@ -51,7 +51,11 @@
                                     type="checkbox"
                                     id="sendmail"
                                     value="SendMail"
-                                    v-model="sendMail"> Send Mail
+                                    
+                                    :value="userData.email"
+                                    @input="userData.email = $event.target.value"
+                                    
+                                    > Send Mail
                         </label>
                         <label for="sendInfomail">
                             <input
