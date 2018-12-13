@@ -8,7 +8,7 @@
         <hr>
         <div style="height: 1800px"></div>
         <div>
-            <p id="data"> Some Extra Data Stuff </p>
+            <p id="data"> User loaded at the  bottom of the page. Scroll Up. </p>
         </div>
     </div>
 </template>

@@ -1,6 +1,7 @@
 import Home from './components/Home.vue'
 import Header from './components/Header.vue'
 import AdvComponents from './components/advcomponents/index.vue'
+import InputForms from './components/inputforms/index.vue'
 
 // by having it in this asynchronous function here which has to resolve before it gets executed, webpack
 // is only doing this if we actually need that file and it will create appropriate bundles to be loaded
@@ -58,6 +59,10 @@ export const routes = [
 
     { path: '/advancedComponents', component: AdvComponents, name: 'AdvComponents', components: {
         default: AdvComponents, 
+        'header-top': Header
+    } },
+    { path: '/UserInputForms', component: InputForms, name: 'InputForms', components: {
+        default: InputForms, 
         'header-top': Header
     } },
 

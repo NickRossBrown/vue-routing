@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-6 col-md-offset-1">
                 <h1>Routing</h1>
                 <hr>
                 <router-view name="header-top" ></router-view>
@@ -28,7 +28,7 @@ import Header from './components/Header.vue';
     .slide-leave-active {
         transition: opacity 1s ease;
         opacity: 0;
-        animation: slide-out 1s ease-out forwards;
+        animation: slide-out .3s ease-out forwards;
     }
 
     .slide-leave {
@@ -37,7 +37,7 @@ import Header from './components/Header.vue';
     }
 
     .slide-enter-active {
-        animation: slide-in 1s ease-out forwards;
+        animation: slide-in .3s ease-out forwards;
     }
 
     @keyframes slide-out {
